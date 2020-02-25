@@ -1,10 +1,7 @@
 # Group 20
-## Main Ideas
-Event Management Tool
+## Event Management Tool
 
-- Business
-    - Promote event to the top of the page through payment
-
+### Requirements
 - Analytics
     - Gather basic data on users on signup
         - e.g. Age range
@@ -15,9 +12,18 @@ Event Management Tool
     - Twitter feed asociated to the specific event hashtag
     - Google Maps API to give the event a location
     - Optional Twitch stream of event once it has started
-
-- Offline
-    - Allow users to create and save "draft" events to then be "published" when an internet connection is established
+    - Search API for users find relevant events
 
 - Streaming
     - Live guest numbers are streammed to the clients
+        
+### Business
+- Increase of event capacity through payment
+- Promote event to the top of the page through payment
+    
+### Stretch Features
+- External API's
+    - Translation API to provide events in users local language
+    
+- Offline
+    - Allow users to create and save "draft" events to then be "published" when an internet connection is established
