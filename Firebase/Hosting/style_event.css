@@ -1,0 +1,63 @@
+*{
+  box-sizing: border-box;
+}
+body{
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+  font-family: 'IBM Plex Sans';
+  letter-spacing: 0px;
+  font-size: 18px;
+}
+
+
+
+.sidebar {
+    height: 100vh;
+    width: 100px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    overflow-x: hidden;
+    padding-top: 15px;
+    border-right: 1px dashed black;
+}
+
+.main {
+    margin-left: 100px;
+    min-width: 900px;
+    overflow-x: auto;
+    background-color: #ccc;
+}
+
+.eventcol {
+    display: inline-block;
+    padding: 8px 8px;
+    width: 40vw;
+    background-color: #ddd;
+    min-width: 400px;
+    min-height: calc(100vh - 5px);
+    border-right: 1px solid grey;
+    border-left: 1px solid grey;
+}
+
+.event {
+    border: 1px solid grey;
+    border-radius: 4px;
+    padding: 5px 5px;
+    height: 600px;
+    max-height: 40vh;
+    background-color: #eee;
+    overflow-y: auto;
+}
+
+.event-name { font-size: 36px; padding: 5px }
+.event-infotable { width: 100%; }
+.event-infotablethird { width: 33% }
+.event-desc { font-size: 16px; }
+.event-date { }
+.event-price { }
+.event-cap { }
+.event-picture { max-height: 100px; }
