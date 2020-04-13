@@ -1,3 +1,4 @@
+
 var firebaseConfig = {
 	apiKey: "AIzaSyCELqGd1KY8mtLbBLuaWGR-n8Cv6x1SeCQ",
 	authDomain: "com2027-group-20.firebaseapp.com",
@@ -11,4 +12,10 @@ var firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
+
+const auth = firebase.auth();
+const db = firebase.firestore();
+
+
+
 

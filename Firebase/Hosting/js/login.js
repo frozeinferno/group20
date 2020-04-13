@@ -1,11 +1,13 @@
-const auth = firebase.auth();
-const signupForm = document.querySelector('#login-form');
-signupForm.addEventListener('submit', (e) => {
+
+const loginForm = document.querySelector('#login-form');
+
+
+loginForm.addEventListener('submit', (e) => {
   e.preventDefault();
   
   // get user info
-  const email = signupForm['email'].value;
-  const password = signupForm['password'].value;
+  const email = loginForm['email'].value;
+  const password = loginForm['password'].value;
 
   console.log(email, password);
 
