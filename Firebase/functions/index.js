@@ -10,6 +10,10 @@ exports.createUserAccount = functions.region('europe-west1').auth.user().onCreat
     const newUserRef = db.collection("users").doc(`${uid}`)
     return newUserRef.set({
         email: email
+    }).then(function() {
+        console.log("Document successfully created!")
+    }).catch(function(error) {
+        console.error("Error creating document: ", error);
     })
 })
 
