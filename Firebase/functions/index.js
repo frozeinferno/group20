@@ -2,13 +2,12 @@ const functions = require('firebase-functions')
 const admin = require('firebase-admin')
 admin.initializeApp(functions.config().firebase);
 
-const ref = admin.database().ref()
+const db = admin.firestore()
 
 exports.createUserAccount = functions.auth.user().onCreate(event => {
-    const uid = event.data.uid
-    const email = event.data.email
-    const newUserRef = ref.child('/users/${uid}')
-    return newUserRef.set({
+    const uid = event.uid
+    const email = event.email
+    const newUserRef = db.collection("users").doc(`${uid}`).set({
         email: email
     })
 })
