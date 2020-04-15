@@ -4,11 +4,22 @@ admin.initializeApp(functions.config().firebase);
 
 const db = admin.firestore()
 
-exports.createUserAccount = functions.auth.user().onCreate(event => {
+exports.createUserAccount = functions.region('europe-west1').auth.user().onCreate(event => {
     const uid = event.uid
     const email = event.email
-    const newUserRef = db.collection("users").doc(`${uid}`).set({
+    const newUserRef = db.collection("users").doc(`${uid}`)
+    return newUserRef.set({
         email: email
+    })
+})
+
+exports.deleteUserAccount = functions.region('europe-west1').auth.user().onDelete(event => {
+    const uid = event.uid
+    const userRef = db.collection("users").doc(`${uid}`)
+    return userRef.delete().then(function() {
+        console.log("Document successfully deleted!")
+    }).catch(function(error) {
+        console.error("Error removing document: ", error);
     })
 })
 
