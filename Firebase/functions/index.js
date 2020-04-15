@@ -26,10 +26,3 @@ exports.deleteUserAccount = functions.region('europe-west1').auth.user().onDelet
         console.error("Error removing document: ", error);
     })
 })
-
-// // Create and Deploy Your First Cloud Functions
-// // https://firebase.google.com/docs/functions/write-firebase-functions
-//
-// exports.helloWorld = functions.https.onRequest((request, response) => {
-//  response.send("Hello from Firebase!");
-// });
