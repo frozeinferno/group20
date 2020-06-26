@@ -20,8 +20,10 @@ signupForm.addEventListener('submit', (e) => {
             gender: gender,
             interests: interests
         });
-
+    }).catch(function(error) {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log(errorMessage);
+        return null;
     });
-  
-    
-  });
+});
