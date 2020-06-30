@@ -23,7 +23,7 @@ signupForm.addEventListener('submit', (e) => {
             gender: gender,
             interests: interests
         }).then(cred => {
-            window.location.href = "https://com2027-group-20.firebaseapp.com/event.html";
+            window.location.href = "/event.html";
         });
     // An error catch to alert the user about a failed sign up
     }).catch(function(error) {
