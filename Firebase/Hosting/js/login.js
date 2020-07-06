@@ -11,5 +11,13 @@ loginForm.addEventListener('submit', (e) => {
 
 	auth.signInWithEmailAndPassword(email, password).then((cred) => {
 		console.log(cred.user);
-	});
+		window.location.href = "/event.html";
+
+	}).catch(function(error) {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log(errorMessage);
+        alert(errorMessage);
+        return null; 
+    });
 });
