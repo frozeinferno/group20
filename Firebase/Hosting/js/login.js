@@ -3,16 +3,19 @@ const loginForm = document.querySelector('#login-form');
 loginForm.addEventListener('submit', (e) => {
 	e.preventDefault();
 
-	// get user info
+	// Get user login info from loginForm on login.html
 	const email = loginForm['email'].value;
 	const password = loginForm['password'].value;
 
-	console.log(email, password);
+	// Temporary console logging for debugging
+	//console.log(email, password);
 
+    // Signing in with the retrieved user email and password
 	auth.signInWithEmailAndPassword(email, password).then((cred) => {
 		console.log(cred.user);
 		window.location.href = "/event.html";
-
+	
+	// An error catch to alert the user about a failed login
 	}).catch(function(error) {
         var errorCode = error.code;
         var errorMessage = error.message;

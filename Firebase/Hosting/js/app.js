@@ -13,6 +13,7 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 
+// Setting global references
 const auth = firebase.auth();
 const db = firebase.firestore();
 
