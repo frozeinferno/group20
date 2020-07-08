@@ -1,4 +1,3 @@
-
 var firebaseConfig = {
 	apiKey: "AIzaSyCELqGd1KY8mtLbBLuaWGR-n8Cv6x1SeCQ",
 	authDomain: "com2027-group-20.firebaseapp.com",
@@ -17,6 +16,26 @@ firebase.analytics();
 const auth = firebase.auth();
 const db = firebase.firestore();
 
+function checkUser() {
+	var user = auth.currentUser;
 
+	if (user != null) {
+		var docRef = db.collection('users').doc(user.uid).collection('user_writeable').doc('profile');
+		docRef.get().then(function(doc) {
+			if (doc.exists) {
+				console.log("Username:", doc.data().name);
+			} else {
+				console.log("User not found in DB");
+			}
+		}).catch(function(error) {
+			console.log("Error getting document:", error);
+		});
+	} else {
+		console.log("No user logged in")
+	}
+	setTimeout(checkUser, 10000);
+}
+
+checkUser();
 
 
