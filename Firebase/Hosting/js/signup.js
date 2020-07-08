@@ -7,7 +7,7 @@ signupForm.addEventListener('submit', (e) => {
     // ToDo - validation on fields
     const email = signupForm['email'].value;
     const password = signupForm['password'].value;
-    const name = signupForm['name'].value;
+    const displayname = signupForm['displayname'].value;
     const dob = signupForm['dob'].value;
     const gender = signupForm['gender'].value;
     const interests = signupForm['interests'].value;
@@ -18,9 +18,11 @@ signupForm.addEventListener('submit', (e) => {
     // Creating an authorized user with email and password
     auth.createUserWithEmailAndPassword(email, password).then(cred => {
         console.log(cred.user.uid);
+        cred.user.updateProfile({
+            displayName: displayname
+        });
         // Creating a Firestore entry with the users id attaching the relevant fields of the sign up form
         return db.collection('users').doc(cred.user.uid).collection('user_writeable').doc('profile').set({
-            name: name,
             dob: dob,
             gender: gender,
             interests: interests

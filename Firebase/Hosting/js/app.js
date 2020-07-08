@@ -16,26 +16,19 @@ firebase.analytics();
 const auth = firebase.auth();
 const db = firebase.firestore();
 
+auth.onAuthStateChanged(user => {
+	if (user == null) {
+		console.log("user: null")
+	} else {
+		console.log(user.displayName)
+	}
+});
+
 function checkUser() {
 	var user = auth.currentUser;
-
 	if (user != null) {
-		var docRef = db.collection('users').doc(user.uid).collection('user_writeable').doc('profile');
-		docRef.get().then(function(doc) {
-			if (doc.exists) {
-				console.log("Username:", doc.data().name);
-			} else {
-				console.log("User not found in DB");
-			}
-		}).catch(function(error) {
-			console.log("Error getting document:", error);
-		});
+		console.log(user.displayName);
 	} else {
-		console.log("No user logged in")
+		console.log("No user logged in");
 	}
-	setTimeout(checkUser, 10000);
 }
-
-checkUser();
-
-

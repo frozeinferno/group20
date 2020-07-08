@@ -12,8 +12,8 @@ loginForm.addEventListener('submit', (e) => {
 
     // Signing in with the retrieved user email and password
 	auth.signInWithEmailAndPassword(email, password).then((cred) => {
-		console.log(cred.user);
 		window.location.href = "/event.html";
+		console.log(cred.user.displayName);
 	
 	// An error catch to alert the user about a failed login
 	}).catch(function(error) {
