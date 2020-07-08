@@ -1,27 +1,47 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<title>BeechTree - Sign up</title>
+	<link href='https://fonts.googleapis.com/css?family=IBM Plex Sans' rel='stylesheet'>
+	<link rel="icon" href="Logo.png">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="tags.css">
 
-<button type="submit" style="border: 0; background: transparent">
+</head>
+
+<!--<button type="submit" style="border: 0; background: transparent">
   <img src="Btn_Login.png" alt="">
 </button>
-<br>
+<br>-->
+<body>
 
-<button type="button">Forgot Password</button>
-<button type="button">Create one</button><br>
+<div class = "container">
+  <section class ="hero">
 
-<form id = "signup-form">
-  <label for="email">Email:</label><br>
-  <input type="text" id="email" name="email"><br>
-  <label for="password">Password:</label><br>
-  <input type="password" id="password" name="password"><br>
-  <label for="dob">Date of Birth:</label><br>
-  <input type="text" id="dob" name="dob"><br>
-  <label for="gender">Gender:</label><br>
-  <input type="text" id="gender" name="gender"><br>
-  <label for="interests">Interests:</label><br>
-  <input type="text" id="interests" name="interests"><br>
-  <input type="submit" value="Submit">
-</form>
+    <form id = "login-form", class="" action="event.html", method="">
+
+      <img src="Logo.png" class="logo" alt="">
+      <h1>Welcome to</h1>
+      <h2>BeechTree</h2>
+
+      <label for="email">Email:</label><br>
+      <input type="text" id="email" name="email"><br>
+      <label for="password">Password:</label><br>
+      <input type="password" id="password" name="password"><br>
+      <label for="dob">Date of Birth:</label><br>
+      <input type="text" id="dob" name="dob"><br>
+      <label for="gender">Gender:</label><br>
+      <input type="text" id="gender" name="gender"><br>
+      <label for="interests">Interests:</label><br>
+      <input type="text" id="interests" name="interests"><br>
+      <div class="tags-input" data-name="tags-input">
+    </form>
+  <button type="button">Forgot Password</button>
+
+  </section>
+
+</div>
 
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
 		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -31,3 +51,5 @@
 	<script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-firestore.js"></script>
 	<script src="js/app.js"></script>
 	<script src="js/signup.js"></script>
+
+</body>
