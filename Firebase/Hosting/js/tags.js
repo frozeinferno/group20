@@ -69,7 +69,7 @@
         hiddenInput.value = tagsList.join(',');
     }
 
-    //validation to remove all characters outside of letters, replacing all white space with a space
+    //validation to remove all characters outside of letters, replacing all white space with a space *or any desired character
     function filterTag (tag) {
         return tag.replace(/[^\w -]/g, '').trim().replace(/\W+/g, ' ');
     }

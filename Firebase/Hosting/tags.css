@@ -8,6 +8,7 @@
 }
 
 .tags-input .tag {
+
   font-size: 85%;
   padding: 0.5em 0.75em;
   margin: 0.25em 0.1em;
@@ -15,6 +16,8 @@
   background-color: #ddd;
   transition: all 0.1s linear;
   cursor: pointer;
+
+  
 }
 
 .tags-input .tag:hover {
