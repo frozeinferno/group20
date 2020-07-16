@@ -1,19 +1,111 @@
 <!DOCTYPE html>
-<html>
-
-<head>
+<html lang="en" dir="ltr">
+  <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Home</title>
-</head>
+    <title>BeechTree</title>  <!-- Tab title -->
+    <link href='https://fonts.googleapis.com/css?family=IBM Plex Sans' rel='stylesheet'>
+    <link rel="icon" href="assets/Logo.png">  <!-- Tab icon -->
+    <link rel="stylesheet" href="style.css">  <!-- Css stylesheet -->
 
-<body>
-    <div>
-        <h2>Home Dev Page</h2>
-        <a href="/login.html">Log in</a> </br>
-        <a href="/signup.html">Sign Up</a> </br>
-        <a href="/event.html">Event</a> </br>
-    </div>
-</body>
+  </head>
+  <body>
+      <div class="container">  <!-- First section, which is divided by two. An image on the left and a login form on the right. -->
+          <section class="hero">
+
+            <img class="main_image" src="assets/img_1.png">  <!-- The left part of the first section. A big image which is 50% the width og the window. -->
+
+            <div class="Form">  <!-- The rigth part of the first section. A login form with the option to sign up. -->
+
+              <img src="assets/Logo.png" class= "logo" alt="">  <!-- Logo -->
+              <h1>Welcome to</h1> <!-- Big text on top of the form. -->
+              <h2>BeechTree</h2>
+
+              <form class="" action="index.html" method="post"> <!-- Main form. -->
+
+                <div style="padding: 20px; top: 110px; position: relative;"> <!-- Email -->
+                  <label for="email">Email</label>
+                  <br>
+                  <input type="text" id="email" name="email" value="">
+                </div>
+
+                <div style="padding: 20px; top: 100px; position: relative;"> <!-- Password -->
+                  <label for="password">Password</label>
+                  <br>
+                  <input type="password" id="password" name="password" value="">
+                </div>
+
+                <input type="submit" value="Login"> <!-- Logging Button -->
+                <a href="reset_password" class="txt_btn">Forgot Password</a> <!-- Forgot password button -->
+              </form>
+
+
+
+            </div>
+
+            <div class = "final"> <!-- Final section of Form. Sign Up option and Sign in with Facebook -->
+
+                  <div class="fb"> <!-- Sign in with Facebook -->
+                    <button class="fbBtn" type="button" name="button">
+                      <img src="assets/fb_logo.png" style="width:19px; position: relative;" alt=""> <!-- Facebook logo -->
+                      Sign in with Facebook <!-- Button text -->
+                    </button>
+                  </div>
+
+                  <div class="create_acc"> <!-- Create Account  -->
+                    <a>Still without account?</a>
+                    <a href="" class="txt_btn2">Create one</a> <!-- Create one button -->
+                  </div>
+
+            </div>
+
+          </section>
+        </div>
+
+
+          <div class="sec1"> <!-- The second section. This setion contains 3 cards with information. -->
+
+            <div class="row">  <!-- Rows. This is just 1 row. -->
+              <!-- 3 Columns -->
+
+            <div class="column"> <!-- Column #1 -->
+              <div class="card">
+                  <img src="assets/ticket.svg" style="margin-top: 30px;" alt=""> <!-- Ticket icon. -->
+                  <h1>Find Events</h1>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              </div>
+            </div>
+
+            <div class="column"> <!-- Column #1 -->
+              <div class="card">
+                <img src="assets/calendar.svg" style="margin-top: 30px;" alt=""> <!-- Calendar icon. -->
+                <h1>Create Events</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              </div>
+            </div>
+
+            <div class="column"> <!-- Column #1 -->
+              <div class="card">
+                <img src="assets/cash.svg" style="margin-top: 30px;" alt="">  <!-- Cash icon. -->
+              <h1>Get Paid</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            </div>
+
+          </div>
+
+
+
+          </div>
+
+
+          <div class= "footer"> <!-- Footer of the page. -->
+            <br>
+             <img src="assets/Logo.png" style="width: 20px; margin-top: 20px;" alt=""> <!-- Logo -->
+             <br>
+             <p>© BeechTree 2020</p>
+          </div>
+
+        </body>
+
 
 </html>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="61px" height="50px" viewBox="0 0 61 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.1 (29687) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="3" width="47" height="41" rx="1"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="47" height="41" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <rect id="path-3" x="2.5" y="0.452164339" width="1.5" height="9.33783562" rx="0.75"></rect>
+        <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-1" y="-1" width="3.5" height="11.3378356">
+            <rect x="1.5" y="-0.547835661" width="3.5" height="11.3378356" fill="white"></rect>
+            <use xlink:href="#path-3" fill="black"></use>
+        </mask>
+        <rect id="path-5" x="2.5" y="0.452164339" width="1.5" height="9.33783562" rx="0.75"></rect>
+        <mask id="mask-6" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-1" y="-1" width="3.5" height="11.3378356">
+            <rect x="1.5" y="-0.547835661" width="3.5" height="11.3378356" fill="white"></rect>
+            <use xlink:href="#path-5" fill="black"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-689.000000, -842.000000)">
+            <g id="Group-3" transform="translate(576.000000, 809.000000)">
+                <g id="Group" transform="translate(113.000000, 34.000000)">
+                    <use id="Rectangle-55" stroke="#4285F5" mask="url(#mask-2)" stroke-width="4" fill="#FFFFFF" xlink:href="#path-1"></use>
+                    <rect id="Rectangle-59" fill="#4185F5" x="7" y="17" width="7" height="5"></rect>
+                    <rect id="Rectangle-59-Copy" fill="#4185F5" x="16" y="17" width="7" height="5"></rect>
+                    <rect id="Rectangle-59-Copy-2" fill="#4185F5" x="25" y="17" width="7" height="5"></rect>
+                    <rect id="Rectangle-59-Copy-3" fill="#4185F5" x="34" y="17" width="7" height="5"></rect>
+                    <rect id="Rectangle-59-Copy-7" fill="#4185F5" x="7" y="25" width="7" height="5"></rect>
+                    <rect id="Rectangle-59-Copy-6" fill="#4185F5" x="16" y="25" width="7" height="5"></rect>
+                    <rect id="Rectangle-59-Copy-5" fill="#4185F5" x="25" y="25" width="7" height="5"></rect>
+                    <rect id="Rectangle-59-Copy-10" fill="#4185F5" x="7" y="33" width="7" height="5"></rect>
+                    <rect id="Rectangle-59-Copy-9" fill="#4185F5" x="16" y="33" width="7" height="5"></rect>
+                    <rect id="Rectangle-59-Copy-8" fill="#4185F5" x="25" y="33" width="7" height="5"></rect>
+                    <rect id="Rectangle-56" fill="#4285F5" x="2" y="12" width="43" height="2"></rect>
+                    <g id="Group-2" transform="translate(11.000000, 0.000000)">
+                        <g id="Rectangle-57">
+                            <use fill="#4285F5" fill-rule="evenodd" xlink:href="#path-3"></use>
+                            <use stroke="#FFFFFF" mask="url(#mask-4)" stroke-width="2" xlink:href="#path-3"></use>
+                        </g>
+                        <ellipse id="Oval-2" fill="#4285F4" cx="2" cy="9" rx="2" ry="2"></ellipse>
+                    </g>
+                    <g id="Group-2" transform="translate(31.000000, 0.000000)">
+                        <g id="Rectangle-57">
+                            <use fill="#4285F5" fill-rule="evenodd" xlink:href="#path-5"></use>
+                            <use stroke="#FFFFFF" mask="url(#mask-6)" stroke-width="2" xlink:href="#path-5"></use>
+                        </g>
+                        <ellipse id="Oval-2" fill="#4285F4" cx="2" cy="9" rx="2" ry="2"></ellipse>
+                    </g>
+                    <circle id="Oval-1-Copy" stroke="#4385F6" stroke-width="2" fill="#FFFFFF" cx="47" cy="35" r="13"></circle>
+                    <rect id="Rectangle-53" fill="#4384F5" x="46" y="27" width="2" height="17" rx="1"></rect>
+                    <rect id="Rectangle-53-Copy" fill="#4384F5" transform="translate(47.000000, 35.500000) rotate(90.000000) translate(-47.000000, -35.500000) " x="46" y="27" width="2" height="17" rx="1"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

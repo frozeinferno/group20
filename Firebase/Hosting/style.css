@@ -8,12 +8,13 @@ body{
   font-family: 'IBM Plex Sans';
   letter-spacing: 0px;
   font-size: 18px;
+
 }
 
 .hero{
   width: 100%;
   text-align: center;
-
+  position: fixed;
 }
 
 .container {
@@ -73,6 +74,7 @@ label {
 }
 
 input[type=text],input[type=password]{
+  outline: none;
   width: 46%;
   padding: 5px 5px;
   margin: 5px 0;
@@ -82,11 +84,13 @@ input[type=text],input[type=password]{
   box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.21);
   border-radius: 5px;
   font-size:14px;
+
 }
 
 input[type=password]{
   font:small-caption;
   font-size:16px;
+  outline: none;
 }
 
 input[type=submit]{
@@ -104,6 +108,7 @@ input[type=submit]{
   top: 100px;
   position: relative;
   cursor: pointer;
+  outline: none;
 }
 input[type=submit]:hover{
   background: #1D5AC0;
@@ -135,12 +140,12 @@ input[type=submit]:hover{
   background: #EEEEEE;
   width: 50%;
   height: 10vw;
-  position: absolute;
+  position: relative;
   bottom: 0px;
   float: right;
   margin-left: 50%;
   align-items: center;
-
+  top: 27vw;
 
 }
 
@@ -150,28 +155,44 @@ input[type=submit]:hover{
   color: #0A2554;
 }
 .fb{
-  /* Rectangle 46 Copy 2: */
-background: #4285F5;
-box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.21);
-border-radius: 5px;
-font-size: 15px;
-color: #FFFFFF;
-letter-spacing: 0px;
-padding: 5px 10px 5px 10px;
-display: inline;
-top: 30px;
-position: relative;
-}
-.fb > img{
+
+  font-size: 15px;
+  color: #FFFFFF;
+  letter-spacing: 0px;
+  padding: 5px 10px 5px 10px;
+  display: inline;
+  top: 30px;
   position: relative;
-  top: 4px;
+
+
+}
+
+.fbBtn{
+  color: white;
+  background: #4285F5;
+  box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.21);
+  border-radius: 5px;
+  font-size: 17px;
+  color: #FFFFFF;
+  letter-spacing: 0px;
+  cursor: pointer;
+  outline: none;
+  height: 30px;
+}
+
+.fbBtn:hover{
+  background: #1D5AC0;
+}
+
+button > img {
+  top: 3px;
 }
 .create_acc{
   position: absolute;
   padding-top: 30px;
   padding-left: calc(50% - 140px);
   padding-bottom: 20px;
-  bottom: 0px;
+  bottom: 20px;
 }
 .create_acc > a{
   text-decoration: none;
@@ -188,10 +209,138 @@ position: relative;
 }
 
 
-.sec1 > img{
+.sec1{
 
 width: 100%;
-top: -100px;
+top: -50px;
 position: relative;
+background-image: url("assets/sec_1.png");
+height: 700px;
+padding-right: 100px;
+padding-left: 100px;
 
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 200px 50px 100px 50px;
+
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  height: 350px;
+}
+
+.footer{
+  background-color: #FFFFFF;
+  z-index: 100;
+  position: relative;
+  top: -50px;
+  height: 200px;
+}
+
+@media screen and (max-width: 1400px) {
+  .final{
+    top: 30vw;
+
+    align-items: left;
+    float: left;
+
+  }
+  .fb{
+    top: 20%;
+    position: absolute;
+    left: 10px;
+
+  }
+  .create_acc{
+    bottom: 44%;
+    font-size: 15px;
+    padding-left: 31.5%;
+    padding-left: calc(80% - 140px);
+  }
+  .card {
+    padding: 16px;
+    height: 390px;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .container{
+    height: 600px;
+  }
+  .main_image{
+    visibility: hidden;
+  }
+
+  .Form{
+    position: absolute;
+    width: 100%;
+    align-items: center;
+
+  }
+
+  .final{
+    top: 460px;
+    margin-left: 0%;
+    width: 100%;
+    align-items: left;
+    float: left;
+    height: 200px;
+}
+
+  .fb{
+    top: 5%;
+    position: relative;
+    left: 0px;
+
+  }
+
+  .create_acc{
+    bottom: 45%;
+    font-size: 15px;
+    padding-left: calc(52% - 140px);
+  }
+
+  .column {
+    float: left;
+    width: 33.33%;
+    padding: 200px 20px 100px 20px;
+
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .sec1{
+    background-image: url("assets/sec_1_2.png");
+    height: 1350px;
+  }
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+    padding: 100px 20px 0px 20px;
+  }
+  .card {
+    padding: 16px;
+    height: 328px;
+  }
 }

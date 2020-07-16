@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="82px" height="62px" viewBox="0 0 82 62" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.1 (29687) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 6</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="70" height="30" rx="4"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="70" height="30" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <rect id="path-3" x="0" y="3.41060513e-13" width="70" height="30" rx="4"></rect>
+        <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="70" height="30" fill="white">
+            <use xlink:href="#path-3"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-1107.000000, -830.000000)">
+            <g id="Group-6" transform="translate(1107.000000, 829.000000)">
+                <g id="Group-5" transform="translate(36.746979, 43.725080) rotate(-8.000000) translate(-36.746979, -43.725080) translate(1.746979, 28.725080)">
+                    <use id="Rectangle-77" stroke="#4285F5" mask="url(#mask-2)" stroke-width="4" fill="#FFFFFF" xlink:href="#path-1"></use>
+                    <circle id="Oval-10" fill="#4285F5" cx="34.5" cy="14.5" r="12.5"></circle>
+                    <text id="$" font-family="HiraginoSansGB-W3, Hiragino Sans GB" font-size="16.6000004" font-weight="300" fill="#FFFFFF">
+                        <tspan x="28.6049999" y="21">$</tspan>
+                    </text>
+                    <circle id="Oval-11" fill="#4285F5" cx="10" cy="15" r="5"></circle>
+                    <circle id="Oval-11-Copy" fill="#4285F5" cx="59" cy="16" r="5"></circle>
+                </g>
+                <g id="Group-5-Copy" transform="translate(45.000000, 24.000000) rotate(15.000000) translate(-45.000000, -24.000000) translate(10.000000, 9.000000)">
+                    <use id="Rectangle-77" stroke="#4285F5" mask="url(#mask-4)" stroke-width="4" fill="#FFFFFF" xlink:href="#path-3"></use>
+                    <circle id="Oval-10" fill="#4285F5" cx="34.5" cy="14.5" r="12.5"></circle>
+                    <text id="$" font-family="HiraginoSansGB-W3, Hiragino Sans GB" font-size="16.6000004" font-weight="300" fill="#FFFFFF">
+                        <tspan x="28.6049999" y="21">$</tspan>
+                    </text>
+                    <circle id="Oval-11" fill="#4285F5" cx="10" cy="15" r="5"></circle>
+                    <circle id="Oval-11-Copy" fill="#4285F5" cx="59" cy="16" r="5"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
