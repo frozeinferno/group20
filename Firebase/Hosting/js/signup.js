@@ -10,10 +10,10 @@ signupForm.addEventListener('submit', (e) => {
     const displayname = signupForm['displayname'].value;
     const dob = signupForm['dob'].value;
     const gender = signupForm['gender'].value;
-    const interests = signupForm['interests'].value;
+    const interests = signupForm['tags-input'].value;
     
     // Temporary console logging for debugging
-    //console.log(email, password, dob, gender, interests);
+    console.log(email, password, dob, gender, interests);
 
     // Creating an authorized user with email and password
     auth.createUserWithEmailAndPassword(email, password).then(cred => {
