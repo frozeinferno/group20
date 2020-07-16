@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="createevent.css">
+<html>
+<head>
+<ul>
+  <li><a class="active" href="#home">Main Page</a></li>
+  <li><a href="#news">Create Event</a></li>
+  <li><a href="#contact">Contact Us</a></li>
+</ul>
+
+<div class="container">
+  <form action="/action_page.php">
+  <div class="row">
+    <div class="col-25">
+      <label for="fname">Name of the party </label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="fname" name="firstname" placeholder="The name of the party...">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-25">
+      <label for="fname">Image </label>
+    </div>
+    <div class="col-75">
+    <input type="file" id="img" name="img" accept="image/*">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-25">
+      <label for="lname">Date</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="date" name="date" placeholder="The date of the party...">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="country">Location</label>
+    </div>
+    <div class="col-75">
+      <select id="location" name="location">
+        <option value="australia">Australia</option>
+        <option value="canada">Canada</option>
+        <option value="usa">USA</option>
+        <option value="uk">UK</option>
+        <option value="italy">Italy</option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="subject">Subject</label>
+    </div>
+    <div class="col-75">
+      <textarea id="subject" name="subject" placeholder="Write more details for the event.." style="height:200px"></textarea>
+    </div>
+  </div>
+  <div class="row">
+    <input type="submit" value="Submit">
+  </div>
+  </form>
+</div>
+</head>
+<body>
