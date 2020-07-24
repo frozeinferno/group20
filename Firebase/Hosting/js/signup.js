@@ -7,28 +7,15 @@ signupForm.addEventListener('submit', (e) => {
     // ToDo - validation on fields
     const email = signupForm['email'].value;
     const password = signupForm['password'].value;
-    const displayname = signupForm['displayname'].value;
-    const dob = signupForm['dob'].value;
-    const gender = signupForm['gender'].value;
-    const interests = signupForm['tags-input'].value;
     
     // Temporary console logging for debugging
-    console.log(email, password, dob, gender, interests);
+    //console.log(email, password);
 
     // Creating an authorized user with email and password
     auth.createUserWithEmailAndPassword(email, password).then(cred => {
-        console.log(cred.user.uid);
-        cred.user.updateProfile({
-            displayName: displayname
-        });
-        // Creating a Firestore entry with the users id attaching the relevant fields of the sign up form
-        return db.collection('users').doc(cred.user.uid).collection('user_writeable').doc('profile').set({
-            dob: dob,
-            gender: gender,
-            interests: interests
-        }).then(cred => {
-            window.location.href = "/event.html";
-        });
+        console.log(cred.user.uid);    
+        window.location.href = "/signupForm.html";
+        return null;
     // An error catch to alert the user about a failed sign up
     }).catch(function(error) {
         var errorCode = error.code;

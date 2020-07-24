@@ -17,10 +17,19 @@ const auth = firebase.auth();
 const db = firebase.firestore();
 
 auth.onAuthStateChanged(user => {
-	if (user == null) {
-		console.log("user: null")
-	} else {
-		console.log(user.displayName)
+	if (user == null){
+		if (window.location.href != "https://com2027-group-20.firebaseapp.com/signupForm" && 
+			window.location.href != "https://com2027-group-20.firebaseapp.com/index") {
+			window.location.href = "/index.html";
+			return null
+		}
+	}
+	if (user.displayName == null){
+		if (window.location.href != "https://com2027-group-20.firebaseapp.com/signupForm" && 
+			window.location.href != "https://com2027-group-20.firebaseapp.com/index") {
+			window.location.href = "/signupForm.html";
+			return null
+		}
 	}
 });
 

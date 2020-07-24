@@ -6,10 +6,9 @@ const db = admin.firestore()
 
 exports.createUserAccount = functions.region('europe-west1').auth.user().onCreate(event => {
     const uid = event.uid
-    const email = event.email
     const newUserRef = db.collection("users").doc(`${uid}`)
     return newUserRef.set({
-        email: email
+        uid: uid
     }).then(function() {
         console.log("Document successfully created!")
     }).catch(function(error) {
