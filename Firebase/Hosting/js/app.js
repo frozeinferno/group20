@@ -18,7 +18,8 @@ const db = firebase.firestore();
 
 auth.onAuthStateChanged(user => {
 	if (user == null) {
-		console.log("user: null")
+		// Only allow users to access the homepage if they're not logged in
+		if (window.location.pathname != "/") window.location.replace("/");
 	} else {
 		console.log(user.displayName)
 	}
@@ -31,4 +32,13 @@ function checkUser() {
 	} else {
 		console.log("No user logged in");
 	}
+}
+
+function logout() {
+	firebase.auth().signOut().then(function () {
+		// Once signed out, send to homepage
+		window.location.replace("/");
+	}).catch(function (error) {
+		console.log(error);
+	});
 }
