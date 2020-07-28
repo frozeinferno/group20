@@ -11,7 +11,7 @@
 
   	<body>
 		<div class="container">  <!-- First section, which is divided by two. An image on the left and a login form on the right. -->
-          	<section class="hero">
+    	<section class="hero">
 				<img class="main_image" src="assets/img_1.png">  <!-- The left part of the first section. A big image which is 50% the width og the window. -->
 				<div class="Form">  <!-- The rigth part of the first section. A login form with the option to sign up. -->
 
@@ -36,7 +36,7 @@
 						<input type="submit" value="Login"> <!-- Logging Button -->
 						<a href="reset_password" class="txt_btn">Forgot Password</a> <!-- Forgot password button -->
 					</form>
-            	</div>
+        </div>
 
 				<div class = "final"> <!-- Final section of Form. Sign Up option and Sign in with Facebook -->
 					<div class="fb"> <!-- Sign in with Facebook -->
@@ -45,16 +45,23 @@
 							Sign in with Facebook <!-- Button text -->
 						</button>
 					</div>
-
+          <!--
+          <div class="google">
+            <button onclick="googlesignin()" class="googleBtn" type="button" name="button" id = googlesign-in>
+              <img src="assets/google_logo.png" style="width:19px; position: relative;" alt="">
+              Sign in with google
+            </button>
+          </div>
+          -->
 					<div class="create_acc"> <!-- Create Account  -->
 						<a>Still without account?</a>
 						<a href="/signup.html" class="txt_btn2">Create one</a> <!-- Create one button -->
 					</div>
 				</div>
 
-          	</section>
+    	</section>
 		</div>
-		
+
 		<div class="sec1"> <!-- The second section. This setion contains 3 cards with information. -->
 			<div class="row">  <!-- Rows. This is just 1 row. -->
 				<!-- 3 Columns -->
@@ -98,9 +105,10 @@
 		<script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-auth.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-firestore.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-analytics.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
 		<script src="js/app.js"></script>
 		<script src="js/login.js"></script>
-		
+
 
 
     </body>

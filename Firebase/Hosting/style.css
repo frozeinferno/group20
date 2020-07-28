@@ -163,11 +163,32 @@ input[type=submit]:hover{
   display: inline;
   top: 30px;
   position: relative;
+}
 
-
+.google {
+  font-size: 15px;
+  color: #FFFFFF;
+  letter-spacing: 0px;
+  padding: 5px 10px 5px 10px;
+  display: inline;
+  top: 30px;
+  position: relative;
 }
 
 .fbBtn{
+  color: white;
+  background: #4285F5;
+  box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.21);
+  border-radius: 5px;
+  font-size: 17px;
+  color: #FFFFFF;
+  letter-spacing: 0px;
+  cursor: pointer;
+  outline: none;
+  height: 30px;
+}
+
+.googleBtn{
   color: white;
   background: #4285F5;
   box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.21);
