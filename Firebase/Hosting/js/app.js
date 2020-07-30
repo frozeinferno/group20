@@ -23,15 +23,15 @@ auth.onAuthStateChanged(user => {
 		if (window.location.pathname != "/signupForm" && 
 			window.location.pathname != "/") {
 			window.location.replace("/");
-			return null
 		}
+		return null
 	}
 	if (user.displayName == null){
 		if (window.location.pathname != "/signupForm" && 
 			window.location.pathname != "/") {
 			window.location.replace("/signupForm.html");
-			return null
 		}
+		return null
 	}
 });
 
