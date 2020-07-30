@@ -18,16 +18,16 @@ const db = firebase.firestore();
 
 auth.onAuthStateChanged(user => {
 	if (user == null){
-		if (window.location.href != "https://com2027-group-20.firebaseapp.com/signupForm" && 
-			window.location.href != "https://com2027-group-20.firebaseapp.com/index") {
-			window.location.href = "/index.html";
+		if (window.location.pathname != "/signupForm" && 
+			window.location.pathname != "/") {
+			window.location.replace("/");
 			return null
 		}
 	}
 	if (user.displayName == null){
-		if (window.location.href != "https://com2027-group-20.firebaseapp.com/signupForm" && 
-			window.location.href != "https://com2027-group-20.firebaseapp.com/index") {
-			window.location.href = "/signupForm.html";
+		if (window.location.pathname != "/signupForm" && 
+			window.location.pathname != "/") {
+			window.location.replace("/signupForm.html");
 			return null
 		}
 	}
@@ -40,4 +40,13 @@ function checkUser() {
 	} else {
 		console.log("No user logged in");
 	}
+}
+
+function logout() {
+	firebase.auth().signOut().then(function () {
+		// Once signed out, send to homepage
+		window.location.replace("/");
+	}).catch(function (error) {
+		console.log(error);
+	});
 }
