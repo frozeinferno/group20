@@ -17,6 +17,8 @@ const auth = firebase.auth();
 const db = firebase.firestore();
 
 auth.onAuthStateChanged(user => {
+	checkUser();
+
 	if (user == null){
 		if (window.location.pathname != "/signupForm" && 
 			window.location.pathname != "/") {
