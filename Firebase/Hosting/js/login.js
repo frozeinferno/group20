@@ -31,6 +31,7 @@ function fbsignin(){
 		var token = result.credential.accessToken;
 		// The signed-in user info.
 		var user = result.user;
+		window.location.replace("/events.html");
 		console.log(user);
 		// ...
 	}).catch(function(error) {
@@ -49,6 +50,7 @@ function googlesignin(){
 		var token = result.credential.accessToken;
 		// The signed-in user info.
 		var user = result.user;
+		window.location.replace("/events.html");
 		console.log(user);
 		// ...
 	}).catch(function(error) {

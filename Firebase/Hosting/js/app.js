@@ -26,6 +26,7 @@ auth.onAuthStateChanged(user => {
 		}
 		return null
 	}
+
 	if (user.displayName == null){
 		if (window.location.pathname != "/signupForm" && 
 			window.location.pathname != "/") {
@@ -33,6 +34,27 @@ auth.onAuthStateChanged(user => {
 		}
 		return null
 	}
+
+	auth.fetchSignInMethodsForEmail(user.email).then(function(result){
+		var signInMethod = `${result["0"]}`;
+		if (signInMethod != "password"){
+			db.collection('users').doc(user.uid).collection('user_writeable').limit(1).get().then(coll => {
+				if (coll.docs.length < 1) {
+					if (window.location.pathname != "/signupForm" && 
+						window.location.pathname != "/") {
+						window.location.replace("/signupForm.html");
+					}
+				return null
+				}
+			}).catch(function (error) {
+				var errorMessage = error.message;
+				alert(errorMessage);
+			});
+		}
+	}).catch(function (error) {
+		var errorMessage = error.message;
+		alert(errorMessage);
+	});
 });
 
 function checkUser() {
