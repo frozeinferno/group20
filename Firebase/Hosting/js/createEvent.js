@@ -32,7 +32,8 @@ $("#submit").on("click", async () => {
 				name: eventName,
 				date: eventDate,
 				location: eventLoc,
-				subject: eventSubject
+				subject: eventSubject, // TODO: Accept newlines
+				published: true
 			});
 
 			try {
@@ -41,6 +42,8 @@ $("#submit").on("click", async () => {
 				const snapshot = await storageRef.put(file); // Wait for file to be uploaded
 
 				alert(`Event ${docRef.id} created!`);
+
+				window.location.href = "/events";
 			} catch (error) {
 				await docRef.delete();
 				alert("There was an error uploading your image!");
