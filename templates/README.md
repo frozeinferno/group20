@@ -1,0 +1,1 @@
+This folder is for templates for Handlebars.js. Nothing is actually read by code from here but it's useful for us to have the minified version.
