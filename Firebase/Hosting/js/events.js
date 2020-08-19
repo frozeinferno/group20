@@ -12,11 +12,22 @@ function myFunction() {
 
 async function search() {
 	const input = document.getElementById("myInput").value;
+
+	if (input == "") {
+		$("#myDropdown").find("a").remove();
+		return;
+	}
+
 	const result = await index.search(input);
 	$("#myDropdown").find("a").remove();
 	for (const hit of result.hits) {
-		$("#myDropdown").append(`<a href="/events#${hit.objectID}">${hit.name}</a>`);
+		$("#myDropdown").append(`<a class="searchLink" href="/events#${hit.objectID}">${hit.name}</a>`);
 	}
+
+	$(".searchLink").click(async (event) => {
+		const event_id = event.target.href.split("#").pop();
+		openModal(event_id);
+	});
 }
 
 // Uses Handlebars.js to render card HTML
@@ -41,6 +52,24 @@ async function buildModal(event_id) {
 	const data = { "button_text": buttonText, "event_id": event_id, "event_image": events[event_id]["image_url"], "event_name": events[event_id]["name"], "event_description": events[event_id]["subject"].replace(/\\n/g, "<br/>"), "event_date": events[event_id]["date"], "event_location": events[event_id]["location"] };
 	const html = eventModalTemplate(data);
 	return html;
+}
+
+async function openModal(event_id) {
+	const html = await buildModal(event_id);
+	$("#eventModal").html(html);
+
+	modal.style.display = "block";
+
+	const closeBtn = document.getElementsByClassName("close")[0];
+	closeBtn.onclick = function () {
+		modal.style.display = "none";
+	}
+
+	$("#event_button").click(async () => {
+		// TODO: Do something
+	});
+
+	console.log(event_id);
 }
 
 const modal = document.getElementById("eventModal");
@@ -71,23 +100,9 @@ async function main() {
 	}
 
 	// Register listener
-	$(".card__link").click(async () => {
-		const event_id = this.id;
-		const html = await buildModal(event_id);
-		$("#eventModal").html(html);
-
-		modal.style.display = "block";
-
-		const closeBtn = document.getElementsByClassName("close")[0];
-		closeBtn.onclick = function () {
-			modal.style.display = "none";
-		}
-
-		$("#event_button").click(async () => {
-			// TODO: Do something
-		});
-
-		console.log(event_id);
+	$(".card__link").click(async (event) => {
+		const event_id = event.target.href.split("#").pop();
+		openModal(event_id);
 	});
 }
 
