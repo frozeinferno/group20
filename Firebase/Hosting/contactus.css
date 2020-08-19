@@ -1,5 +1,7 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 .dropdown {
@@ -55,12 +57,17 @@ input[type=text], select, textarea {
 }
 
 input[type=submit] {
-  background-color: #ddd;
-  outline: none;
+  background-color: #0A2554;
+ color: white;
+ padding: 12px 20px;
+ border: none;
+ border-radius: 4px;
+ cursor: pointer;
+ float: right;
 }
 
 input[type=submit]:hover {
-  background-color: #f1f1f1;
+  background-color: #02183f;
 }
 
 /* Style the container/contact section */
@@ -91,4 +98,34 @@ input[type=submit]:hover {
     width: 100%;
     margin-top: 0;
   }
+}
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #0A2554;
+  font-family: sans-serif;
+}
+
+.nav-right{
+   float: right;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
 }
