@@ -1,24 +1,20 @@
 const storage = firebase.storage();
 
+const searchClient = algoliasearch("QNQTMV2ZTW", "0f6d2908c4578df3184587ba435457c3");
+const index = searchClient.initIndex("dev_EVENTS");
+
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
 function myFunction() {
 	document.getElementById("myDropdown").classList.toggle("show");
 }
 
-function filterFunction() {
-	var input, filter, ul, li, a, i;
-	input = document.getElementById("myInput");
-	filter = input.value.toUpperCase();
-	div = document.getElementById("myDropdown");
-	a = div.getElementsByTagName("a");
-	for (i = 0; i < a.length; i++) {
-		txtValue = a[i].textContent || a[i].innerText;
-		if (txtValue.toUpperCase().indexOf(filter) > -1) {
-			a[i].style.display = "";
-		} else {
-			a[i].style.display = "none";
-		}
+async function search() {
+	const input = document.getElementById("myInput").value;
+	const result = await index.search(input);
+	$("#myDropdown").find("a").remove();
+	for (const hit of result.hits) {
+		$("#myDropdown").append(`<a href="/events#${hit.objectID}">${hit.name}</a>`);
 	}
 }
 
