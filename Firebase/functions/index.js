@@ -33,27 +33,27 @@ exports.deleteUserAccount = functions.region("europe-west1").auth.user().onDelet
 	});
 });
 
-exports.addToIndex = functions.region("europe-west1").firestore.document("events/{eventId}").onCreate((snapshot) => {
+exports.addToIndex = functions.region("europe-west1").firestore.document("events/{docId}").onCreate((snapshot) => {
 	const data = snapshot.data();
 	
 	if (data.published == true) {
-		const eventId = snapshot.id;
-		return index.saveObject({ ...data, eventId });
+		const objectID = snapshot.id;
+		return index.saveObject({ ...data, objectID });
 	}
 	return;
 });
 
-exports.updateIndex = functions.region("europe-west1").firestore.document("events/{eventId}").onUpdate((change) => {
+exports.updateIndex = functions.region("europe-west1").firestore.document("events/{docId}").onUpdate((change) => {
 	const newData = change.after.data();
 
 	if (newData.published == true) {
-		const eventId = change.after.id;
-		return index.saveObject({ ...newData, eventId });
+		const objectID = change.after.id;
+		return index.saveObject({ ...newData, objectID });
 	} else {
 		return index.deleteObject(eventId);
 	}
 });
 
-exports.deleteFromIndex = functions.region("europe-west1").firestore.document("events/{eventId}").onDelete((snapshot) => {
+exports.deleteFromIndex = functions.region("europe-west1").firestore.document("events/{docId}").onDelete((snapshot) => {
 	index.deleteObject(snapshot.id);
 });
