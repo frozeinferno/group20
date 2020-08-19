@@ -32,11 +32,11 @@ async function search() {
 
 // Uses Handlebars.js to render card HTML
 async function buildCard(doc) {
-	const eventCardSrc = `<div class="card"><img class="card__image" src="{{{ image_url }}}" alt=""><div class="card__content">{{{ content }}}</div><div class="card__info"><div><a href="/events#{{{ event_id }}}" class="card__link" id="{{{ event_id }}}">View Event</a></div></div></div>`;
+	const eventCardSrc = `<div class="card"><img class="card__image" src="{{{ image_url }}}" alt=""><div class="card__content"><h3>{{{ event_name }}}</h3>{{{ content }}}</div><div class="card__info"><div><a href="/events#{{{ event_id }}}" class="card__link" id="{{{ event_id }}}">View Event</a></div></div></div>`;
 	const eventCardTemplate = Handlebars.compile(eventCardSrc);
 	const image_url = await storage.ref(`events/${doc.id}`).getDownloadURL();
 	events[doc.id]["image_url"] = image_url;
-	const data = { "event_id": doc.id, "content": doc.data()["subject"].replace(/\\n/g, "<br/>"), "image_url": image_url };
+	const data = { "event_id": doc.id, "event_name": doc.data()["name"], "content": doc.data()["subject"].replace(/\\n/g, "<br/>"), "image_url": image_url };
 	const html = eventCardTemplate(data);
 	return html;
 }
@@ -81,9 +81,7 @@ window.onclick = function (event) {
 }
 
 async function main() {
-	// https://firebase.google.com/docs/firestore/query-data/query-cursors
-	// Will only show first five events for now, TODO: implement pagination
-	const first = db.collection("events").where("published", "==", true).orderBy("date", "desc").limit(5); // Require composite index
+	const first = db.collection("events").where("published", "==", true).orderBy("date", "desc"); // Require composite index
 	const snapshot = await first.get();
 
 	let promises = [];
