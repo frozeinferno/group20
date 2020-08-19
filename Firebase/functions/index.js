@@ -1,8 +1,13 @@
 const functions = require("firebase-functions");
 const admin = require("firebase-admin");
+const algoliasearch = require("algoliasearch");
+const secrets = require("./secrets.json");
 
 admin.initializeApp(functions.config().firebase);
 const db = admin.firestore();
+
+const APP_ID = secrets.algolia.app;
+const ADMIN_KEY = secrets.algolia.admin_key;
 
 exports.createUserAccount = functions.region("europe-west1").auth.user().onCreate((event) => {
 	const uid = event.uid;
