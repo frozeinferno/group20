@@ -8,6 +8,8 @@ const db = admin.firestore();
 
 const APP_ID = secrets.algolia.app;
 const ADMIN_KEY = secrets.algolia.admin_key;
+const client = algoliasearch(APP_ID, ADMIN_KEY);
+const index = client.initIndex("dev_EVENTS");
 
 exports.createUserAccount = functions.region("europe-west1").auth.user().onCreate((event) => {
 	const uid = event.uid;
@@ -29,4 +31,29 @@ exports.deleteUserAccount = functions.region("europe-west1").auth.user().onDelet
 	}).catch(function (error) {
 		console.error("Error removing document: ", error);
 	});
+});
+
+exports.addToIndex = functions.region("europe-west1").firestore.document("events/{eventId}").onCreate((snapshot) => {
+	const data = snapshot.data();
+	
+	if (data.published == true) {
+		const eventId = snapshot.id;
+		return index.saveObject({ ...data, eventId });
+	}
+	return;
+});
+
+exports.updateIndex = functions.region("europe-west1").firestore.document("events/{eventId}").onUpdate((change) => {
+	const newData = change.after.data();
+
+	if (newData.published == true) {
+		const eventId = change.after.id;
+		return index.saveObject({ ...newData, eventId });
+	} else {
+		return index.deleteObject(eventId);
+	}
+});
+
+exports.deleteFromIndex = functions.region("europe-west1").firestore.document("events/{eventId}").onDelete((snapshot) => {
+	index.deleteObject(snapshot.id);
 });
