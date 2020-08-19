@@ -2,56 +2,57 @@
 <html>
 
 <head>
-  <link rel="stylesheet" href="contactus.css">
+	<link rel="stylesheet" href="contactus.css">
 </head>
 
 <body>
-  <ul>
-	<li><a class="active" href="/events.html">Main Page</a></li>
-	<li><a href="/createevent.html">Create Event</a></li>
-	<li><a href="/contactus.html">Contact Us</a></li>
-	<li class="nav-right"><a href="#logout" onclick="logout()">Log out</a></li>
-  </ul>
-  <div class="container">
-    <div style="text-align:center">
-      <h2>Contact Us</h2>
-      <p>If you have any questions feel free to ask us. </p>
-    </div>
-    <div class="row">
-      <div class="column">
-        <img src="assets/img_1.png" style="width:100%">
-      </div>
-      <div class="column">
-        <form action="/action_page.php">
-          <label for="fname">First Name</label>
-          <input type="text" id="fname" name="firstname" placeholder="Your name..">
-          <label for="lname">Last Name</label>
-          <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-          <label for="country">Country</label>
-          <label for="fname">Email</label>
-          <input type="text" id="fname" name="firstname" placeholder="Your email">
-          <select id="country" name="country">
-            <option value="australia">Australia</option>
-            <option value="canada">Canada</option>
-            <option value="usa">USA</option>
-            <option value="uk">UK</option>
-            <option value="france">France</option>
-            <option value="italy">Italy</option>
-            <option value="spain">Spain </option>
-            <option value="austria">Austria</option>
-            <option value="greece">Greece</option>
-          </select>
-          <label for="subject">Subject</label>
-          <textarea id="subject" name="subject" placeholder="Write your comments" style="height:170px"></textarea>
-          <label class="container">Privacy Check Box
-            <input type="checkbox" checked="checked">
-            <span class="checkmark"></span>
-          </label>
-          <input type="submit" value="Submit">
-        </form>
-      </div>
-    </div>
-  </div>
+	<ul>
+		<li><a class="active" href="/events.html">Main Page</a></li>
+		<li><a href="/createevent.html">Create Event</a></li>
+		<li><a href="/contactus.html">Contact Us</a></li>
+		<li class="nav-right"><a href="#logout" onclick="logout()">Log out</a></li>
+	</ul>
+	<div class="container">
+		<div style="text-align:center">
+			<h2>Contact Us</h2>
+			<p>If you have any questions feel free to ask us. </p>
+		</div>
+		<div class="row">
+			<div class="column">
+				<img src="assets/img_1.png" style="width:100%">
+			</div>
+			<div class="column">
+				<form action="/action_page.php">
+					<label for="fname">First Name</label>
+					<input type="text" id="fname" name="firstname" placeholder="Your name..">
+					<label for="lname">Last Name</label>
+					<input type="text" id="lname" name="lastname" placeholder="Your last name..">
+					<label for="country">Country</label>
+					<label for="fname">Email</label>
+					<input type="text" id="fname" name="firstname" placeholder="Your email">
+					<select id="country" name="country">
+						<option value="australia">Australia</option>
+						<option value="canada">Canada</option>
+						<option value="usa">USA</option>
+						<option value="uk">UK</option>
+						<option value="france">France</option>
+						<option value="italy">Italy</option>
+						<option value="spain">Spain </option>
+						<option value="austria">Austria</option>
+						<option value="greece">Greece</option>
+					</select>
+					<label for="subject">Subject</label>
+					<textarea id="subject" name="subject" placeholder="Write your comments"
+						style="height:170px"></textarea>
+					<label class="container">I have read and accept the <a href="/privacy">Privacy Policy</a>
+						<input type="checkbox">
+						<span class="checkmark"></span>
+					</label>
+					<input type="submit" value="Submit">
+				</form>
+			</div>
+		</div>
+	</div>
 </body>
 
 </html>
