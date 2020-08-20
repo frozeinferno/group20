@@ -3,8 +3,8 @@
 <html>
 
 <head>
-	<title>Create an event</title>
-	<link rel="stylesheet" href="createevent.css">
+	<title>Profile</title>
+	<link rel="stylesheet" href="profile.css">
 </head>
 
 <body>
@@ -20,57 +20,44 @@
 		<p>This page works best in Google Chrome</p><br/>
 		<div class="row">
 			<div class="col-25">
-				<label for="name">Name of the party </label>
+				<label for="name">Name</label>
 			</div>
 			<div class="col-75">
-				<input type="text" id="name" name="firstname" placeholder="The name of the party...">
+				<input type="text" id="name" placeholder="Loading...">
 			</div>
 		</div>
 
 		<div class="row">
 			<div class="col-25">
-				<label for="img">Image </label>
+				<label for="date">Date of Birth</label>
 			</div>
 			<div class="col-75">
-				<input type="file" id="img" name="img" accept="image/*">
+				<input type="text" id="dob" name="date" placeholder="Loading...">
 			</div>
 		</div>
 
 		<div class="row">
 			<div class="col-25">
-				<label for="date">Date</label>
+				<label for="date">Gender</label>
 			</div>
 			<div class="col-75">
-				<input type="date" id="date" name="date">
+				<input type="text" id="gender" name="gender" placeholder="Loading...">
 			</div>
 		</div>
+
 		<div class="row">
 			<div class="col-25">
-				<label for="country">Location</label>
+				<label for="date">Interests</label>
 			</div>
 			<div class="col-75">
-				<select id="location" name="location">
-					<option value="spain">Spain</option>
-					<option value="greece">Greece</option>
-					<option value="hong_kong">Hong Kong</option>
-					<option value="usa">USA</option>
-					<option value="uk">UK</option>
-					<option value="austria">Austria</option>
-					<option value="egypt">Egypt</option>
-				</select>
+				<input type="text" id="interests" name="interests" placeholder="Loading...">
 			</div>
 		</div>
+
+		<br/>
+
 		<div class="row">
-			<div class="col-25">
-				<label for="subject">Subject</label>
-			</div>
-			<div class="col-75">
-				<textarea id="subject" name="subject" placeholder="Write more details for the event..."
-					style="height:200px"></textarea>
-			</div>
-		</div>
-		<div class="row">
-			<input type="submit" id="submit" value="Submit">
+			<input type="submit" id="submit" value="Save">
 		</div>
 
 	</div>
@@ -82,7 +69,7 @@
 	<script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-storage.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-analytics.js"></script>
 	<script src="js/app.js"></script>
-	<script src="js/createEvent.js"></script>
+	<script src="js/profile.js"></script>
 </body>
 
 </html>
