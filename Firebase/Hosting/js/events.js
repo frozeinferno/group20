@@ -1,4 +1,6 @@
 const storage = firebase.storage();
+const functions = firebase.functions();
+const registerInterest = firebase.app().functions("europe-west1").httpsCallable("registerInterest");
 
 let events = {};
 const searchClient = algoliasearch("QNQTMV2ZTW", "0f6d2908c4578df3184587ba435457c3");
@@ -43,13 +45,20 @@ async function buildCard(doc) {
 
 // Popup modal
 async function buildModal(event_id) {
-	let buttonText = "I'm going!"
+	let buttonText = "I'm going!";
+	let already_going = "";
+
 	if (events[event_id].user == auth.currentUser.uid) {
 		buttonText = "Edit";
 	}
-	const eventModalSrc = `<div class="modal-content"><p class="close">&times;</p><img class="modal__image" src="{{{ event_image }}}" alt=""/><h3>{{{ event_name }}}</h3><p>{{{ event_description }}}</p><br/><p>Date: {{{ event_date }}}</p><p>Location: {{{ event_location }}}</p><br/><button id="event_button">{{ button_text }}</button></div>`;
+
+	if (events[event_id]["attendees"]?.includes(auth.currentUser.uid)) {
+		already_going = "disabled";
+	}
+
+	const eventModalSrc = `<div class="modal-content"><p class="close">&times;</p><img class="modal__image" src="{{{ event_image }}}" alt=""/><h3>{{{ event_name }}}</h3><p>{{{ event_description }}}</p><br/><p>Date: {{{ event_date }}}</p><p>Location: {{{ event_location }}}</p><p>Going: {{{ event_going }}}</p><br/><button {{ already_going }} id="event_button">{{ button_text }}</button></div>`;
 	const eventModalTemplate = Handlebars.compile(eventModalSrc);
-	const data = { "button_text": buttonText, "event_id": event_id, "event_image": events[event_id]["image_url"], "event_name": events[event_id]["name"], "event_description": events[event_id]["subject"].replace(/\\n/g, "<br/>"), "event_date": events[event_id]["date"], "event_location": events[event_id]["location"] };
+	const data = { "button_text": buttonText, "event_id": event_id, "event_image": events[event_id]["image_url"], "event_name": events[event_id]["name"], "event_description": events[event_id]["subject"].replace(/\\n/g, "<br/>"), "event_date": events[event_id]["date"], "event_location": events[event_id]["location"], "event_going": events[event_id]["attendees"]?.length || 0, "already_going": already_going };
 	const html = eventModalTemplate(data);
 	return html;
 }
@@ -66,7 +75,13 @@ async function openModal(event_id) {
 	}
 
 	$("#event_button").click(async () => {
-		// TODO: Do something
+		if (events[event_id].user == auth.currentUser.uid) {
+			window.location.href = `/editevent#${event_id}`;
+		} else {
+			await registerInterest({ "event": event_id });
+			alert("Thank you for registering your interest! You have been added.");
+			window.location.href = "/events";
+		}
 	});
 
 	console.log(event_id);

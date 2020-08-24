@@ -35,7 +35,7 @@ exports.deleteUserAccount = functions.region("europe-west1").auth.user().onDelet
 
 exports.addToIndex = functions.region("europe-west1").firestore.document("events/{docId}").onCreate((snapshot) => {
 	const data = snapshot.data();
-	
+
 	if (data.published == true) {
 		const objectID = snapshot.id;
 		return index.saveObject({ ...data, objectID });
@@ -56,4 +56,18 @@ exports.updateIndex = functions.region("europe-west1").firestore.document("event
 
 exports.deleteFromIndex = functions.region("europe-west1").firestore.document("events/{docId}").onDelete((snapshot) => {
 	index.deleteObject(snapshot.id);
+});
+
+exports.registerInterest = functions.region("europe-west1").https.onCall((data, context) => {
+	const event = data.event;
+	const uid = context.auth.uid;
+
+	db.collection("events").doc(event).update({
+		"attendees": admin.firestore.FieldValue.arrayUnion(uid)		
+	});
+
+	return {
+		"user": uid,
+		"status": "going"
+	};
 });
