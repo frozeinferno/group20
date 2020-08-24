@@ -17,35 +17,28 @@
 
 	<div class="container">
 		<p>This page works best in Google Chrome</p><br/>
+
 		<div class="row">
 			<div class="col-25">
-				<label for="name">New name of the party </label>
+				<label for="name">Event name </label>
 			</div>
 			<div class="col-75">
-				<input type="text" id="name" name="firstname" placeholder="The name of the party...">
+				<input type="text" id="name" name="firstname"  placeholder="Loading...">
 			</div>
 		</div>
 
 		<div class="row">
 			<div class="col-25">
-				<label for="img">Image </label>
-			</div>
-			<div class="col-75">
-				<input type="file" id="img" name="img" accept="image/*">
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-25">
-				<label for="date">New Date</label>
+				<label for="date">Date</label>
 			</div>
 			<div class="col-75">
 				<input type="date" id="date" name="date">
 			</div>
 		</div>
+
 		<div class="row">
 			<div class="col-25">
-				<label for="country">New Location</label>
+				<label for="country">Location</label>
 			</div>
 			<div class="col-75">
 				<select id="location" name="location">
@@ -59,17 +52,33 @@
 				</select>
 			</div>
 		</div>
+
 		<div class="row">
 			<div class="col-25">
-				<label for="subject">New Subject</label>
+				<label for="subject">Subject</label>
 			</div>
 			<div class="col-75">
-				<textarea id="subject" name="subject" placeholder="Write more details for the event..."
+				<textarea id="subject" name="subject" placeholder="Loading..."
 					style="height:200px"></textarea>
 			</div>
 		</div>
+
 		<div class="row">
-			<input type="submit changes" id="submit changes" value="Submit Changes">
+			<div class="col-25">
+				<label for="country">Published</label>
+			</div>
+			<div class="col-75">
+				<select id="published" name="published">
+					<option value="yes">Yes</option>
+					<option value="no">No</option>
+				</select>
+			</div>
+		</div>
+
+		<br/>
+
+		<div class="row">
+			<input type="submit" id="submit" value="Submit">
 		</div>
 
 	</div>
@@ -81,7 +90,7 @@
 	<script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-storage.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-analytics.js"></script>
 	<script src="js/app.js"></script>
-	<script src="js/createEvent.js"></script>
+	<script src="js/editevent.js"></script>
 </body>
 
 </html>
